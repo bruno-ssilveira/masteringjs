@@ -1,0 +1,6 @@
+/* Operadores
+    && -> AND
+    || -> OR
+    ! -> NOT
+*/
+
