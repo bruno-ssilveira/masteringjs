@@ -8,8 +8,7 @@ let imc;
 form.onsubmit = (event) => {
 	event.preventDefault();
 
-  	imc = (parseFloat(peso.value.replace(',', '.')) / (parseFloat(altura.value.replace(',', '.')) * parseFloat(altura.value.replace(',', '.')))).toFixed(2);
-	console.log(imc);
+  	imc = (parseFloat(peso.value.replace(',', '.')) / (parseFloat(altura.value.replace(',', '.')) ** 2)).toFixed(2);
 
 	if(imc < 18.5) {
 		resultado.textContent = `Abaixo do peso. Seu IMC é ${imc} `;
