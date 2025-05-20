@@ -19,3 +19,12 @@ console.log(vaiExecutar && falaOi())
 const corUsuario = '';
 const corPadrao = 'black';
 console.log(corUsuario || corPadrao);
+
+
+// appendChild()
+// Aplica dentro alguma outra tag etc html
+const resultado = document.querySelector('.resultado');
+const p = document.createElement('p');
+p.innerHTML = 'qualquer coisa';
+p.classList.add('paragrafo'); //adiciona classe na tag p
+resultado.appendChild(p);

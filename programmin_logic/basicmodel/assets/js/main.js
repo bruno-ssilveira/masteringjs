@@ -8,7 +8,7 @@ let imc;
 form.onsubmit = (event) => {
 	event.preventDefault();
 
-  	imc = parseFloat(peso.value) / (parseFloat(altura.value) * parseFloat(altura.value));
+  	imc = (parseFloat(peso.value.replace(',', '.')) / (parseFloat(altura.value.replace(',', '.')) * parseFloat(altura.value.replace(',', '.')))).toFixed(2);
 	console.log(imc);
 
 	if(imc < 18.5) {

@@ -28,6 +28,14 @@ body {
     border-radius: 8px;
 }
 
+.container h1 {
+    align-self: center;
+}
+
+.container h2 {
+    font-size: 22px;
+}
+
 .tabelaimcdados {
     line-height: 2em;
 }
@@ -64,6 +72,10 @@ form button {
     margin-top: 10px;
     width: 50%;
     cursor: pointer;
+}
+
+form button:hover {
+    color: #FEFEFE;
 }
 
 /* IMC Calculator */
