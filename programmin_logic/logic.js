@@ -28,3 +28,13 @@ const p = document.createElement('p');
 p.innerHTML = 'qualquer coisa';
 p.classList.add('paragrafo'); //adiciona classe na tag p
 resultado.appendChild(p);
+
+// Operador Ternário ? :
+
+
+// Objeto Date
+const data = new Date();
+const data2 = new Date('2020-01-01 12:10:23.100');
+console.log(data.getMonth() + 1); // Mês começa do zero, como array
+console.log(data.getDay()); // 0 - Domingo, 6 - Sábado
+console.log(data);
