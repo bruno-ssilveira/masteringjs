@@ -1,0 +1,1 @@
+- var <- não tem escopo de bloco

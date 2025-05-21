@@ -38,3 +38,25 @@ const data2 = new Date('2020-01-01 12:10:23.100');
 console.log(data.getMonth() + 1); // Mês começa do zero, como array
 console.log(data.getDay()); // 0 - Domingo, 6 - Sábado
 console.log(data);
+
+
+// Atribuição via desestruturação (Arrays, Objeto)
+
+const numeros = [1000, 2000, 3000, 4000, 5000, 6000];
+const [zero, um, dois, ...rest] = numeros;
+console.log(rest);
+
+const arrayNumbers = [[20, 30, 40], [50, 60, 70], [80, 90, 100]];
+const [lista1] = arrayNumbers;
+console.log(lista1[0]);
+
+const pessoa = {
+    //nome: 'Bruno',
+    sobrenome: 'Silveira',
+    endereco: {
+        rua: 'rua 1',
+        numero: 2
+    }
+}
+const {nome = 'Sem nome', sobrenome, endereco: {rua, numero}} = pessoa;
+console.log(nome, sobrenome, rua, numero);
