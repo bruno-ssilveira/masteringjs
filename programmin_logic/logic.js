@@ -60,3 +60,12 @@ const pessoa = {
 }
 const {nome = 'Sem nome', sobrenome, endereco: {rua, numero}} = pessoa;
 console.log(nome, sobrenome, rua, numero);
+
+// Existe for, for in, for of
+for (let i in nomes) {
+    console.log(nomes[i]); // basicamente o for, mas menos codigo, vai passar por todos os indices do array
+}
+
+for (let valor of nomes) {
+    console.log(valor); // vai mostrar os elementos do array nome
+}
