@@ -69,3 +69,13 @@ for (let i in nomes) {
 for (let valor of nomes) {
     console.log(valor); // vai mostrar os elementos do array nome
 }
+
+
+// diferença de while e dowhile
+do {
+    console.log('roda uma vez, depois checa condicional');
+} while (1 == 2);
+
+while(1 == 2) {
+    console.log('não roda nem uma vez');
+}
