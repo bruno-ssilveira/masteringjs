@@ -79,3 +79,76 @@ do {
 while(1 == 2) {
     console.log('não roda nem uma vez');
 }
+
+// continue e break
+const numbers = [1,2,3,4,5,6,7];
+
+for (let num of numbers) {
+    if(num === 2) {
+        console.log('Pula o num 2');
+        continue;
+    }
+
+    if(num === 7) {
+        console.log('Encontra o 7 e sai do laço');
+        break;
+    }
+
+    console.log(num);
+}
+
+
+// try, catch, throw
+function soma(x, y) {
+    if(typeof x !== 'number' || typeof y !== 'number') {
+        throw new Error('x e y precisam ser números');
+    };
+    return x + y;
+}
+
+try {
+    console.log(soma(1,2));
+    console.log(soma('1',2));
+} catch(error) {
+    console.log('x e y precisam ser números');
+}
+
+
+// try, catch, finally
+function hourReturn(date) {
+    if(date && !(date instanceof Date)){
+        throw new TypeError('Esperando instância de Date');
+    }
+
+    if(!date){
+        date = new Date();
+    }
+
+    return date.toLocaleTimeString('pt-BR', {
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+    });
+}
+
+try {
+    const hora = hourReturn(11);
+    console.log(hora);
+} catch(e) {
+    console.log('Waiting an date.');
+} finally {
+    console.log('Have a good day!')
+}
+
+
+// setInterval and setTimeout
+function showHour() {
+    const data = new Date();
+
+    return data.toLocaleTimeString('pt-BR', {hour12: false});
+}
+
+const timer = setInterval(() => {console.log(showHour())}, 1000);
+
+setTimeout(() => {clearInterval(timer)}, 6000);
