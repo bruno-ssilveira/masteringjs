@@ -30,3 +30,34 @@ function conta3(operador, acumulador, ...numeros) {
     console.log(acumulador);
 }
 conta3('+', 0, 10, 20, 30);
+
+// To pass indeterminated arguments to the function
+const args = (...args) => {
+    console.log(args);
+};
+args('+',1,20,30,40,50);
+
+function args() {
+    const array = [];
+    for(let args of arguments) {
+        array.push(args);
+    }
+    console.log(array);
+    console.log(arguments);
+};
+args('+',1,20,30,40,50);
+
+// Return a fnc from another fnc
+function createMultiplier(multiplier) {
+    return function(n) {
+        return n * multiplier;
+    }
+}
+const duplicate = createMultiplier(2);
+console.log(duplicate(2));
+
+// Fnc of callback
+function f1() {
+    setTimeout(function() {console.log('timout')}, 2000);
+};
+console.log(f1());
