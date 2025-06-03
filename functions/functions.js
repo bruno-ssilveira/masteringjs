@@ -56,8 +56,15 @@ function createMultiplier(multiplier) {
 const duplicate = createMultiplier(2);
 console.log(duplicate(2));
 
-// Fnc of callback
+// Fnc of callback, basicamente chamar uma fnc dentro da outra
 function f1() {
     setTimeout(function() {console.log('timout')}, 2000);
 };
 console.log(f1());
+
+// Fnc imediata - IIFE > Immediately invoked function expression
+(function() {
+    // dessa forma tudo que estiver aqui dentro não toca o escopo global, da pra escrever todo código aqui dentro assim não tem como ver
+        // o javascript da página pelo navegador
+})();
+
