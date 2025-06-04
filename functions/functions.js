@@ -68,3 +68,36 @@ console.log(f1());
         // o javascript da página pelo navegador
 })();
 
+// Factory Function - creates an object, for example a person
+function createsPerson(name, surname, a, p) {
+    return {
+        name,
+        surname,
+
+        get fullName() {
+            return `${this.name} ${this.surname}`;
+        },
+
+        set fullName(value) {
+            value = value.split(' ');
+            this.name = value.shift();
+            this.surname = value.join(' ');
+        },
+
+        speak(topic) {
+            return `${this.name} está ${this.topic}.`
+        },
+        height: a,
+        weight: p,
+        get imc() {
+            const indice = this.weight / (this.height ** 2);
+            return indice.toFixed(2);
+        }
+    };
+}
+const p1 = createsPerson('Bruno', 'Silveira', 1.78, 73);
+    // it's possible transform a fnc in attribute by applying an get before it's call
+        console.log(p1.imc);
+
+p1.fullName = 'Bruno Santos Silveira';
+console.log(p1.fullName);
