@@ -2,7 +2,7 @@
 
 // Em Js uma função mesmo sem parametros declarados consegue receber argumentos e fazer algo a partir deles
 // Caso aplicar parametros, os primeiros argumentos passados para a fnc serao os parametros, mas tudo entrara em arguments podendo ser usado igual como um array
-// Só funciona em functions criadas com a palavra function, arrow fnc, fnc anonima não funciona...
+// Só funciona em functions criadas com a palavra function. Arrow fnc, fnc anonima não funciona...
 function fnc(a, b, c) {
     let total = 0;
     for(let num of arguments) {
@@ -101,3 +101,12 @@ const p1 = createsPerson('Bruno', 'Silveira', 1.78, 73);
 
 p1.fullName = 'Bruno Santos Silveira';
 console.log(p1.fullName);
+
+// Constructor Function
+function Pessoa(name, surname) {
+    this.name = name;
+    this.surname = surname;
+}
+
+const p1 = new Pessoa('Bruno', 'Silveira');
+console.log(p1.name);
