@@ -104,8 +104,16 @@ console.log(p1.fullName);
 
 // Constructor Function
 function Pessoa(name, surname) {
+    // Atributos ou métodos privados
+    const ID = 12345;
+    const interMetod = function() {};
+
+    // Atributos ou métodos públicos
     this.name = name;
     this.surname = surname;
+    this.metod = function () {
+        console.log(this.nome + `: i'm an metod`)
+    }
 }
 
 const p1 = new Pessoa('Bruno', 'Silveira');
