@@ -118,3 +118,30 @@ function Pessoa(name, surname) {
 
 const p1 = new Pessoa('Bruno', 'Silveira');
 console.log(p1.name);
+
+// Recursive Fnc - call it's self automatically
+function recursive(max) {
+    if(max >= 10) return;
+    max ++;
+    console.log(max);
+    recursive(max);
+}
+recursive(0);
+
+// Generating Fnc
+function* generating1() {
+    // Any code...
+    yield 'Value 1';
+    // Any code...
+    yield 'Value 2';
+    // Any code...
+    yield 'Value 3';
+}
+const g1 = generating1();
+/* console.log(g1.next().value);
+console.log(g1.next().value);
+console.log(g1.next()); */
+for(let value of g1) {
+    console.log(value);
+}
+
