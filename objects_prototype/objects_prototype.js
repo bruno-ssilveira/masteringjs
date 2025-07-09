@@ -64,3 +64,41 @@ const pessoa2 = new Pessoa('Bruna', 'Almeida'); // <- Pessoa = Função construt
 
 // Invés de chamar direto no construtor, chamamos pelo prototype, assim só será criado uma vez a fnc e todos os objetos terão acesso a ela. Criando direto no construtor todos os objetos terão uma função, fazendo pesar o site/programa.
 Pessoa.prototype.nomeCompleto = function() { return this.nome + ' ' + this.sobrenome };
+
+// HERANÇA
+function MyProduct(name, price) {
+    this.name = name;
+    this.price = price;
+};
+
+MyProduct.prototype.aumento = function(quantia) {
+    this.price += quantia;
+}
+MyProduct.prototype.desconto = function(quantia) {
+    this.price -= quantia;
+}
+
+function Camiseta(name, price, color) {
+    MyProduct.call(this, name, price);
+    this.color = color;
+}
+Camiseta.prototype = Object.create(MyProduct.prototype);
+Camiseta.prototype.constructor = Camiseta;
+
+Camiseta.prototype.aumento = function(percent) {
+    this.price = this.price + (this.price * (percent / 100));
+}
+
+const camiseta1 = new Camiseta('blusa', 10, 'blue');
+camiseta1.aumento(100);
+console.log(camiseta1);
+
+function Mug(name, price, material) {
+    MyProduct.call(this, name, price);
+    this.material = material;
+}
+Mug.prototype = Object.create(MyProduct.prototype);
+Mug.prototype.constructor = Mug;
+const mug1 = new Mug('mug1', 10, 'plastic');
+mug1.aumento(10);
+console.log(mug1);
