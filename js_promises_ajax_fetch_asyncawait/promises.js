@@ -6,11 +6,26 @@ function rand(min, max) {
 }
 
 function waitThere(msg, tempo) {
-	setTimeout(() => {
-		console.log(msg);
-	}, tempo);
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve(msg);
+		}, tempo);
+	});
 }
 
-waitThere('teste1', rand(2, 4));
-waitThere('teste2', rand(2, 4));
-waitThere('teste3', rand(2, 4));
+waitThere('Phrase1', rand(2, 4))
+	.then(response => {
+		console.log(response);
+		return waitThere('Phrase2', rand(1, 3));
+	})
+	.then(response => {
+		console.log(response);
+		return waitThere('Phrase3', rand(1, 3));
+	})
+	.then(response => {
+		console.log(response);
+	})
+	.catch();
+
+//waitThere('teste2', rand(2, 4));
+//waitThere('teste3', rand(2, 4));
